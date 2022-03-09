@@ -1,34 +1,20 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+<x-app-layout>
+    <x-slot name="title">Forgot Password</x-slot>
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-        </div>
-
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
+    <div class="h-screen flex flex-col justify-between">
+        <form method="POST" action="{{ route('register') }}"
+            class="w-full h-full px-4 mt-10 flex flex-col justify-center items-center gap-6">
+            <div class="text-gray-600 text-center">
+                <p>We will send you an email with a link to reset your password</p>
             </div>
-        @endif
-
-        <x-jet-validation-errors class="mb-4" />
-
-        <form method="POST" action="{{ route('password.email') }}">
-            @csrf
-
-            <div class="block">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-jet-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-jet-button>
-            </div>
+            <x-input for="email" type="email" label="Email Address" :value="old('email')" placeholder="Email Address"
+                autocomplete="email" required class="input input-primary" />
+            <button type="submit" class="btn btn-md btn-primary">Send</button>
         </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+
+        <div class="h-32 flex justify-center items-center border-t border-gray-400">
+            <span class="text-gray-400">Already have an account? <a href="{{ route('login') }}"
+                    class="text-sky-600 underline underline-offset-2">Login here!</a></span>
+        </div>
+    </div>
+</x-app-layout>

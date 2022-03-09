@@ -1,3 +1,46 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer components {
+    .input {
+        @apply w-full my-2 border rounded-md shadow-md transition duration-200 hocus:shadow-lg;
+    }
+
+    .input-primary {
+        @apply bg-white text-gray-600 border-[#E4E7EC] shadow-gray-200 caret-sky-600 hocus:shadow-[#e7f7ff] focus:border-sky-600 placeholder:text-gray-200;
+    }
+
+    .checkbox {
+        @apply h-6 w-6 border rounded-md shadow-md;
+    }
+
+    .checkbox-primary {
+        @apply bg-gray-50 border-gray-400 text-sky-600 focus:border-sky-600 focus:ring-sky-600 hocus:shadow-[#e7f7ff];
+    }
+
+    .btn {
+        @apply w-full p-2 rounded-lg shadow-md transition duration-200 hocus:shadow-lg border border-sky-600 text-sky-600;
+    }
+    .btn-sm {
+        @apply p-1;
+    }
+    .btn-md {
+        @apply p-3;
+    }
+    .btn-lg {
+        @apply p-4;
+    }
+
+    .btn-primary {
+        @apply bg-sky-600 text-white border-transparent hocus:shadow-sky-200;
+    }
+
+    .btn-secondary {
+        @apply bg-white text-sky-600 border-sky-600 hocus:shadow-sky-200 hocus:bg-sky-600 hocus:text-white;
+    }
+
+    .btn-danger {
+        @apply bg-red-500 text-white border-transparent hover:shadow-red-200;
+    }
+}
