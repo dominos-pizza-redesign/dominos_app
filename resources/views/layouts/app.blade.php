@@ -87,6 +87,7 @@
 
             @stack('modals')
             @stack('scripts')
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         @endauth
 
         @guest

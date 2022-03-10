@@ -44,8 +44,8 @@ class Checkout extends Component
 
     public function order()
     {
-        dd(true);
-        // $this->emit('orderSuccess');
+        // dd(true);
+        $this->emit('saved');
         // $this->products->each(function ($product) {
         //     $product->transaction->update([
         //         'status' => 'ordered',
@@ -60,6 +60,6 @@ class Checkout extends Component
 
     public function render()
     {
-        return view('livewire.transaction.checkout', ['products' => $this->products])->layout('layouts.app', ['title' => 'Checkout']);
+        return view('livewire.transaction.checkout', ['products' => $this->products]);
     }
 }

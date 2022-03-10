@@ -26,16 +26,6 @@ class Product extends Model implements HasMedia
         'description',
     ];
 
-    // /**
-    //  * Get the route key for the model.
-    //  *
-    //  * @return string
-    //  */
-    // public function getRouteKeyName()
-    // {
-    //     return 'slug';
-    // }
-
     public function likes()
     {
         return $this->hasMany(Like::class);
@@ -108,7 +98,7 @@ class Product extends Model implements HasMedia
 
     public function isInCart()
     {
-        return $this->transaction()->where('user_id', auth()->user()->id)->exists()
+        return $this->transaction()->where('user_id', auth()->user()->id)->where('status', 'pending')->whereNull('deleted_at')->exists()
             ? true
             : false;
     }

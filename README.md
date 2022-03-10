@@ -1,64 +1,89 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <img alt="Domino's Pizza 3d Logo" src="./storage/app/public/Logo3D.png" width="100" />
 </p>
+<h1 align="center">
+  Domino's Pizza Redesign App
+</h1>
 
-## About Laravel
+## 🧾 Requirements
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1.  **PHP** >= 8.1.2
+2.  **Composer** >= 2.2.6
+3.  **NodeJS** >= 17.5.0
+4.  **npm** >= 8.4.1
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🔱 Reference
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   [Figma Design File](https://www.figma.com/file/YfJdoFida9cy8DoIhMDbLh/Domino-s-Redesign-File)
 
-## Learning Laravel
+## 🚀 Quick start
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. **Install depedencies**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    Navigate into your new site’s directory and start it up.
 
-## Laravel Sponsors
+    ```shell
+    cd dominos
+    composer install
+    npm install
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+2. **Migrate the database table.**
 
-### Premium Partners
+    ```shell
+    php artisan migrate
+    ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+3. **Run Seeder.**
 
-## Contributing
+    ```shell
+    php artisan db:seed --class=MenuSeeder
+    php artisan db:seed --class=CategorySeeder
+    php artisan db:seed --class=ProductSeeder
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. **Start developing.**
 
-## Code of Conduct
+    ```shell
+    php artisan serve
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    Open another shell and run
 
-## Security Vulnerabilities
+    ```shell
+    npm run develop
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    open on the browser http://localhost:8000/upload to upload products image.
 
-## License
+5. **Open the code and start customizing!**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    Your site is now running at http://localhost:8000 !
+
+6. **Change the browser breakpoint**
+
+    > **Note: This website isn't responsive.**
+
+    for better experience change the browser breakpoint with this steps:
+
+    1. **inspect** the website,
+    2. toggle the **device emulation** by click **Ctrl+Shift+M**, or click on the top left of devtools,
+    3. on the top of website, **change the breakpoint** to **393 x 786** or Pixel 3 XL
+
+    Due to time constraints, we did not add responsive features to this website
+
+7. **Learn more**
+
+    - [Documentation](https://laravel.com/docs)
+
+    - [Simple, fast routing engine](https://laravel.com/docs/routing).
+
+    - [Powerful dependency injection container](https://laravel.com/docs/container).
+
+    - Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+
+    - Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+
+    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+    - [Laracasts](https://laracasts.com)

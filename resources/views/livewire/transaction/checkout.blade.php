@@ -1,6 +1,4 @@
-<x-app-layout>
-    <x-header align="left" back_to="home">Checkout</x-header>
-
+<div>
     <div class="flex w-full flex-col gap-5 border-b border-gray-300 py-3 px-4">
         <div class="flex w-full items-center justify-between gap-4">
             <div>
@@ -57,12 +55,12 @@
             <div x-show="showPaymentDetailModal">
                 <div x-show="showPaymentDetailModal" id="opacity" x-transition:enter.opacity.duration.300ms
                     x-transition:leave.opacity.duration.300ms x-init="$watch('showPaymentDetailModal', open => {
-                    if (open) {
-                        document.body.classList.add('overflow-y-hidden');
-                    } else {
-                        document.body.classList.remove('overflow-y-hidden');
-                    }
-                })" class="fixed top-0 z-30 flex h-screen w-screen items-end" @click="showPaymentDetailModal = false">
+                if (open) {
+                    document.body.classList.add('overflow-y-hidden');
+                } else {
+                    document.body.classList.remove('overflow-y-hidden');
+                }
+            })" class="fixed top-0 z-30 flex h-screen w-screen items-end" @click="showPaymentDetailModal = false">
                     <div class="absolute inset-0 bg-gray-500 opacity-30"></div>
                 </div>
                 <div x-show="showPaymentDetailModal" x-transition:enter="transition-transform ease-in-out duration-300"
@@ -110,7 +108,44 @@
         </template>
     </div>
 
-    <div class="fixed bottom-5 z-40 w-full px-5">
-        <button class="btn btn-primary btn-lg" wire:click="order">Order</button>
+    <div x-data="{shownOrderTransition: false, timeout: null}">
+        <div class="fixed bottom-5 z-40 w-full px-5">
+            <button class="btn btn-primary btn-lg" @click="shownOrderTransition = true">Order</button>
+        </div>
+
+        <template x-teleport="body">
+            <div x-init="$watch('shownOrderTransition', open => {
+                document.body.classList.add('overflow-y-hidden');
+                })" x-show="shownOrderTransition" x-transition:enter="transition ease-in-out duration-700"
+                x-transition:enter-start="opacity-0 scale-80" x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in-out duration-700"
+                x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-80"
+                class="duration fixed bottom-0 z-50 flex h-screen w-screen items-center justify-center bg-sky-600 pt-3 pb-5 transition"
+                @keydown.escape="shownOrderTransition = false">
+                <div class="flex items-center justify-center">
+                    <div class="flex flex-col items-center justify-center">
+                        <h1 class="text-center text-3xl font-semibold text-white">Transaction Success</h1>
+                        <div class="relative flex h-64 w-64 items-center justify-center">
+                            <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_v1rnvv8r.json"
+                                background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay>
+                            </lottie-player>
+                        </div>
+                        <h3 class="text-center text-lg font-light text-white">Enjoy Your Pizza</h3>
+                    </div>
+                    <div class="absolute bottom-0 w-full">
+                        <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_fJ7CVd.json"
+                            background="transparent" speed="1" style="width: 100%; height: 300px;" loop autoplay>
+                        </lottie-player>
+                    </div>
+                    <div class="fixed bottom-5 z-40 w-full px-5">
+                        <a href="{{ route('transactions.success') }}">
+                            <button
+                                class="btn btn-lg btn-secondary hocus:bg-sky-100 hocus:shadow hocus:text-sky-600 rounded-full px-5 text-xl">Done</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </template>
+
     </div>
-</x-app-layout>
+</div>
