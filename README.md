@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="Domino's Pizza 3d Logo" src="./storage/app/public/Logo3D.png" width="100" />
+    <img alt="Domino's Pizza 3d Logo" src="./public/Logo3D.png" width="100" />
 </p>
 <h1 align="center">
   Domino's Pizza Redesign App
