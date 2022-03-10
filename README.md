@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="Domino's Pizza 3d Logo" src="./storage/app/public/Logo3D.png" width="100" />
+    <img alt="Domino's Pizza 3d Logo" src="./public/Logo3D.png" width="100" />
 </p>
 <h1 align="center">
   Domino's Pizza Redesign App
@@ -83,7 +83,5 @@
     - Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
 
     - Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
     - [Laracasts](https://laracasts.com)
