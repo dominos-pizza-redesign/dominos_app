@@ -22,6 +22,11 @@ class TransactionController extends Controller
         return view('transactions.cart', compact('cartProducts'));
     }
 
+    public function checkout()
+    {
+        return view('transactions.checkout');
+    }
+
     public function print_invoice()
     {
         $products = Product::with('transaction')
@@ -33,6 +38,26 @@ class TransactionController extends Controller
             ->whereNull('transactions.deleted_at')
             ->get();
         return view('transactions.invoice', compact('products'));
+    }
+
+    public function success()
+    {
+        $products = Product::with('transaction')
+            ->selectRaw('products.id as id, products.`name`, (products.`price` * transactions.quantity) as total_price, products.`price`, transactions.quantity, transactions.status')
+            ->join('transactions', 'transactions.product_id', '=', 'products.id')
+            ->whereRelation('transaction', 'user_id', auth()->user()->id)
+            ->whereRelation('transaction', 'status', 'pending')
+            ->whereNull('transactions.deleted_at')
+            ->get();
+
+
+        $products->each(function ($product) {
+            $product->transaction()->update([
+                'status' => 'success',
+            ]);
+        });
+
+        return to_route('home');
     }
 
     /**
