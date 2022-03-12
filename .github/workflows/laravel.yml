@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      APP_DEBUG: true
       DB_DATABASE: dominos_db
       DB_USERNAME: root
       DB_PASSWORD: password
@@ -80,10 +81,9 @@ jobs:
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
 
       - name: Test with phpunit
-        run: vendor/bin/phpunit --coverage-text
+        run: vendor/bin/phpunit
         env:
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
-          REDIS_PORT: ${{ job.services.redis.ports['6379'] }}
 
   npm-build:
     runs-on: ubuntu-latest
@@ -102,5 +102,5 @@ jobs:
 
       - name: Install Package
         run: npm install --no-audit --no-fund
-      - name: Compiling Asset for Production
+      - name: Compiling Asset
         run: npm run dev
