@@ -17,7 +17,7 @@ class Checkout extends Component
     public function mount()
     {
         $this->products = Product::with('transaction')
-            ->selectRaw('products.id as id, products.`name`, (products.`price` * transactions.quantity) as total_price, products.`price`, transactions.quantity, transactions.notes')
+            ->selectRaw('products.id as id, products.`name`, (products.`price` * transactions.quantity) as total_price, products.`price`, transactions.quantity')
             ->join('transactions', 'transactions.product_id', '=', 'products.id')
             ->whereRelation('transaction', 'user_id', auth()->user()->id)
             ->whereRelation('transaction', 'status', 'pending')
@@ -29,7 +29,7 @@ class Checkout extends Component
     {
         $this->reset();
         $this->products = Product::with('transaction')
-            ->selectRaw('products.id as id, products.`name`, (products.`price` * transactions.quantity) as total_price, products.`price`, transactions.quantity, transactions.notes')
+            ->selectRaw('products.id as id, products.`name`, (products.`price` * transactions.quantity) as total_price, products.`price`, transactions.quantity')
             ->join('transactions', 'transactions.product_id', '=', 'products.id')
             ->whereRelation('transaction', 'user_id', auth()->user()->id)
             ->whereRelation('transaction', 'status', 'pending')

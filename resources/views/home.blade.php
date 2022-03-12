@@ -13,28 +13,36 @@
 
     <x-slot name="header">
         <x-header align="center" home="true">
-            <img src="{{ asset('storage/logo.png') }}" alt="Logo Domino's Pizza" class="h-10">
+            <img src="{{ asset('storage/logo/logo.png') }}" alt="Logo Domino's Pizza" class="h-10">
         </x-header>
     </x-slot>
 
     <div class="swiper w-full">
         <div class="swiper-wrapper py-5 !w-max">
             <!-- Slides -->
-            <div class="swiper-slide !w-max transition-transform duration-300">
+            <a href="#" class="swiper-slide !w-max transition-transform duration-300">
+                <img src="{{ asset('storage/banner/banner video.jpg') }}" class="h-32 rounded-lg">
+            </a>
+            <a href="{{ route('products.index', ['menu' => 'pizza', 'category' => 'mania']) }}"
+                class="swiper-slide !w-max transition-transform duration-300 px-6">
                 <img src="{{ asset('storage/banner/banner 1.jpg') }}" class="h-32 rounded-lg">
-            </div>
-            <div class="swiper-slide !w-max transition-transform duration-300 px-6">
+            </a>
+            <a href="{{ route('products.index', ['menu' => 'side-order', 'category' => 'sides']) }}"
+                class="swiper-slide !w-max transition-transform duration-300 ">
                 <img src="{{ asset('storage/banner/banner 2.jpg') }}" class="h-32 rounded-lg">
-            </div>
-            <div class="swiper-slide !w-max transition-transform duration-300">
+            </a>
+            <a href="{{ route('products.index', ['menu' => 'pizza', 'category' => 'premium']) }}"
+                class="swiper-slide !w-max transition-transform duration-300 px-6">
                 <img src="{{ asset('storage/banner/banner 3.jpg') }}" class="h-32 rounded-lg">
-            </div>
-            <div class="swiper-slide !w-max transition-transform duration-300 px-6">
+            </a>
+            <a href="{{ route('products.index', ['menu' => 'pizza', 'category' => 'favourites']) }}"
+                class="swiper-slide !w-max transition-transform duration-300">
                 <img src="{{ asset('storage/banner/banner 4.jpg') }}" class="h-32 rounded-lg">
-            </div>
-            <div class="swiper-slide !w-max transition-transform duration-300">
+            </a>
+            <a href="{{ route('products.index', ['menu' => 'pizza', 'category' => 'premium']) }}"
+                class="swiper-slide !w-max transition-transform duration-300 px-6">
                 <img src="{{ asset('storage/banner/banner 5.jpg') }}" class="h-32 rounded-lg">
-            </div>
+            </a>
         </div>
     </div>
 

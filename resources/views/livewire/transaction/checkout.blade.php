@@ -110,8 +110,10 @@
 
     <div x-data="{shownOrderTransition: false, timeout: null}">
         <div class="fixed bottom-5 z-40 w-full px-5">
-            <button class="btn btn-primary btn-lg" @click="shownOrderTransition = true">Order</button>
+            <button class="btn btn-primary btn-lg" @click="shownOrderTransition = true" onclick="play()">Order</button>
         </div>
+
+        <audio src="{{ asset('storage/audio/success-sound-effect.mp3') }}" id="audio" class="hidden"></audio>
 
         <template x-teleport="body">
             <div x-init="$watch('shownOrderTransition', open => {
@@ -146,6 +148,14 @@
                 </div>
             </div>
         </template>
-
     </div>
 </div>
+
+@push('scripts')
+    <script>
+        function play() {
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+    </script>
+@endpush

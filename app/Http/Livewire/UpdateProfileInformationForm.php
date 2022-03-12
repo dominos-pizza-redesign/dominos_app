@@ -1,11 +1,10 @@
 <?php
+
 namespace App\Http\Livewire;
 
-use App\Models\User;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
 
 class UpdateProfileInformationForm extends Component
@@ -29,7 +28,7 @@ class UpdateProfileInformationForm extends Component
     {
         $this->resetErrorBag();
 
-        if($this->avatar) {
+        if ($this->avatar) {
             $this->user->clearMediaCollection('avatars');
             $this->validate([
                 'avatar' => 'image|max:5000', // 5MB Max
