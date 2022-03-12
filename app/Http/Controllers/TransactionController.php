@@ -37,6 +37,7 @@ class TransactionController extends Controller
             ->whereRelation('transaction', 'status', 'pending')
             ->whereNull('transactions.deleted_at')
             ->get();
+
         return view('transactions.invoice', compact('products'));
     }
 
@@ -49,7 +50,6 @@ class TransactionController extends Controller
             ->whereRelation('transaction', 'status', 'pending')
             ->whereNull('transactions.deleted_at')
             ->get();
-
 
         $products->each(function ($product) {
             $product->transaction()->update([

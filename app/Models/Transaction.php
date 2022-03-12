@@ -21,7 +21,6 @@ class Transaction extends Model
         'code',
         'status',
         'quantity',
-        'notes',
     ];
 
     public function user()

@@ -2,7 +2,8 @@
     <x-slot name="title">Login</x-slot>
 
     <div class="fixed top-0 flex h-32 w-screen items-center justify-center bg-sky-600 py-8 px-4">
-        <img src="{{ asset('storage/logo.png') }}" alt="Domino's Pizza 3D Logo PNG Transparent" class="drop-shadow-lg">
+        <img src="{{ asset('storage/logo/logo.png') }}" alt="Domino's Pizza 3D Logo PNG Transparent"
+            class="drop-shadow-lg">
     </div>
     <div class="flex h-screen flex-col justify-between">
         <div class="h-min w-full px-4 pt-40">
@@ -16,14 +17,6 @@
                 {{-- Password --}}
                 <x-input for="password" type="password" label="Password" placeholder="Password"
                     autocomplete="current-password" required class="input input-primary" />
-
-                {{-- Forgot Password --}}
-                @if (Route::has('password.request'))
-                    <div class="flex justify-end">
-                        <a href="{{ route('password.request') }}"
-                            class="text-sky-600 underline underline-offset-1">Forgot password?</a>
-                    </div>
-                @endif
 
                 {{-- Button Login --}}
                 <button type="submit" class="btn btn-md btn-primary">Log In</button>

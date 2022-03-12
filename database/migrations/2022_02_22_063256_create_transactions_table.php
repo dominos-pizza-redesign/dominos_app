@@ -21,8 +21,7 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->constrained('users')->onDelete('cascade')->nullable();
             $table->string("code", 50);
             $table->integer('quantity')->default(1);
-            $table->enum("status", ["success", "pending", "failed", 'cancelled'])->default('pending');
-            $table->mediumText("notes")->nullable();
+            $table->enum("status", ["success", "pending"])->default('pending');
             $table->softDeletes();
             $table->timestamps();
         });
