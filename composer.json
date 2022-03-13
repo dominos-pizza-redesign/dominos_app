@@ -54,10 +54,11 @@
         ],
         "post-install-cmd": [
             "@php -r \"file_exists('.env') || copy('.env.production.example', '.env');\"",
-            "@php artisan test",
+            "@php artisan optimize:clear",
             "@php artisan key:generate",
             "@php artisan storage:link",
-            "@php artisan optimize"
+            "@php artisan optimize",
+            "@php artisan test"
         ]
     },
     "extra": {
