@@ -7,7 +7,7 @@
 
 ## 🧾 Requirements
 
-1.  **PHP** >= 8.1.2
+1.  **Xampp** >= 8.1.2
 2.  **Composer** >= 2.2.6
 3.  **NodeJS** >= 17.5.0
 4.  **npm** >= 8.4.1
@@ -18,51 +18,39 @@
 
 ## 🚀 Quick start
 
-1. **Install depedencies**
+1. **Create Database**
+   Create database with name `dominos`.
+
+    > **Note**: If you have custom database name, do not forget to change database name in .env file.
+
+2. **Install depedencies**
 
     Navigate into your new site’s directory and start it up.
 
     ```shell
     cd dominos
-    composer install
     npm install
+    composer install
     ```
 
-2. **Migrate the database table.**
-
-    ```shell
-    php artisan migrate
-    ```
-
-3. **Run Seeder.**
-
-    ```shell
-    php artisan db:seed --class=MenuSeeder
-    php artisan db:seed --class=CategorySeeder
-    php artisan db:seed --class=ProductSeeder
-    ```
-
-4. **Start developing.**
+3. **Start developing.**
 
     ```shell
     php artisan serve
     ```
 
-    Open another shell and run
-
-    ```shell
-    npm run develop
-    ```
-
-    open on the browser http://localhost:8000/upload to upload products image.
-
-5. **Open the code and start customizing!**
+4. **Open the code and start customizing!**
 
     Your site is now running at http://localhost:8000 !
 
-6. **Change the browser breakpoint**
+    Login with:
 
-    > **Note: This website isn't responsive.**
+    - email: admin@dominos.app
+    - password: password
+
+5. **Change the browser breakpoint**
+
+    > **Note**: This website isn't responsive.
 
     for better experience change the browser breakpoint with this steps:
 
@@ -72,16 +60,11 @@
 
     Due to time constraints, we did not add responsive features to this website
 
-7. **Learn more**
+6. **Learn more**
 
-    - [Documentation](https://laravel.com/docs)
-
+    - [Laravel Documentation](https://laravel.com/docs)
     - [Simple, fast routing engine](https://laravel.com/docs/routing).
-
     - [Powerful dependency injection container](https://laravel.com/docs/container).
-
     - Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-
     - Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-
     - [Laracasts](https://laracasts.com)
