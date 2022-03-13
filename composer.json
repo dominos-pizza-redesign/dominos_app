@@ -53,12 +53,12 @@
             "@php artisan key:generate --ansi"
         ],
         "post-install-cmd": [
-            "@php -r \"file_exists('.env') || copy('.env.production.example', '.env');\"",
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "@php artisan optimize:clear",
             "@php artisan key:generate",
             "@php artisan storage:link",
-            "@php artisan optimize",
-            "@php artisan test"
+            "@php artisan test",
+            "@php artisan optimize"
         ]
     },
     "extra": {
