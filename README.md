@@ -25,7 +25,7 @@
 
 2. **Install depedencies**
 
-    Navigate into your new site’s directory and start it up.
+    Navigate into your new site’s directory and install it first.
 
     ```shell
     cd dominos
@@ -33,13 +33,13 @@
     composer install
     ```
 
-3. **Start developing.**
+3. **Serve the application.**
 
     ```shell
     php artisan serve
     ```
 
-4. **Open the code and start customizing!**
+4. **Open the site on localhost!**
 
     Your site is now running at http://localhost:8000 !
 
