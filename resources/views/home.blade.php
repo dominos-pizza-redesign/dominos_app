@@ -20,7 +20,7 @@
     <div class="swiper w-full">
         <div class="swiper-wrapper py-5 !w-max">
             <!-- Slides -->
-            <a href="#" class="swiper-slide !w-max transition-transform duration-300">
+            <a href="https://youtu.be/uqEYDFZz7eI" target="_blank" class="swiper-slide !w-max transition-transform duration-300">
                 <img src="{{ asset('storage/banner/banner video.jpg') }}" class="h-32 rounded-lg">
             </a>
             <a href="{{ route('products.index', ['menu' => 'pizza', 'category' => 'mania']) }}"
